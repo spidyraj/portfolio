@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion'
 import { projects } from '../data/projects'
 import { FiGithub, FiExternalLink, FiArrowRight } from 'react-icons/fi'
-import { FaJava, FaAws, FaDocker, FaBrain, FaMicrochip } from 'react-icons/fa'
-import { SiSpringboot, SiPostgresql, SiReact, SiNextdotjs, SiFastapi, SiMysql } from 'react-icons/si'
+import { FaJava, FaAws, FaDocker, FaBrain, FaMicrochip, FaSeedling } from 'react-icons/fa'
+import { SiSpringboot, SiPostgresql, SiReact, SiNextdotjs, SiFastapi, SiMysql, SiPinecone, SiOpenai } from 'react-icons/si'
+import { BsCodeSlash } from 'react-icons/bs'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -23,9 +24,11 @@ const iconMap = {
   'Docker': { icon: FaDocker, color: '#2496ed' },
   'AWS': { icon: FaAws, color: '#ff9900' },
   'MySQL': { icon: SiMysql, color: '#4479a1' },
-  'Next.js': { icon: SiNextdotjs, color: '#ffffff' },
+  'Next.js': { icon: SiNextdotjs, color: '#e2e8f0' },
   'LLaMA': { icon: FaBrain, color: '#b535f6' },
-  'Whisper': { icon: FaMicrochip, color: '#b535f6' }
+  'Whisper': { icon: FaMicrochip, color: '#9b72ff' },
+  'Pinecone': { icon: FaSeedling, color: '#00c785' },
+  'JWT': { icon: BsCodeSlash, color: '#f59e0b' },
 }
 
 function AnimatedArchitecture({ architectureText, techList }) {
@@ -133,11 +136,17 @@ function ProjectCard({ project }) {
           <p className="font-mono text-sm text-accent mb-4">{project.subtitle}</p>
           
           <div className="flex flex-wrap gap-2 mb-6">
-            {project.tech.map((t) => (
-              <span key={t} className="font-mono text-xs px-2.5 py-1 bg-bg-tertiary border border-border-color text-text-secondary rounded-md">
-                {t}
-              </span>
-            ))}
+            {project.tech.map((t) => {
+              const mapped = iconMap[t]
+              const Icon = mapped ? mapped.icon : BsCodeSlash
+              const color = mapped ? mapped.color : '#8b949e'
+              return (
+                <span key={t} className="flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 bg-bg-tertiary border border-border-color text-text-secondary rounded-lg hover:border-accent/40 transition-colors">
+                  <Icon style={{ color }} className="text-base flex-shrink-0" />
+                  {t}
+                </span>
+              )
+            })}
           </div>
 
           <div className="flex gap-4">

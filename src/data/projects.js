@@ -33,9 +33,9 @@ export const projects = [
     ],
     challenges: "Identifying N+1 query problems in JPA/Hibernate relationships. Refactored queries to use JOIN FETCH for eager loading critical paths.",
     results: "Improved API response times by 25%. Scaled smoothly to handle 10k+ concurrent simulated connections.",
-    github: "https://github.com/spidyraj/task_management_tria",
+    github: "https://github.com/spidyraj/task_management_trial",
     demo: null,
-    image: "/images/project-taskmanager.png",
+    image: "/images/task_management.png",
     highlight: "25% faster API response"
   },
   {

@@ -76,13 +76,26 @@ export default function SystemDesign() {
               <motion.div
                 key={p.id}
                 variants={fadeUp}
-                whileHover={{ scale: 1.02, y: -4 }}
-                className="glass-card p-6 flex flex-col gap-4 rounded-2xl border border-border-color/50 transition-all duration-300"
+                whileHover={{ scale: 1.03, y: -6 }}
+                className="glass-card p-6 flex flex-col gap-4 rounded-2xl border border-border-color/50 relative overflow-hidden group cursor-default"
+                style={{ transition: 'box-shadow 0.3s ease, border-color 0.3s ease' }}
+                onMouseEnter={e => e.currentTarget.style.boxShadow = `0 0 25px ${p.color}33, 0 0 60px ${p.color}11`}
+                onMouseLeave={e => e.currentTarget.style.boxShadow = ''}
               >
+                {/* Animated top border glow */}
+                <div
+                  className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ background: `linear-gradient(90deg, transparent, ${p.color}, transparent)` }}
+                />
+
                 <div className="flex items-center gap-4">
-                  <div className="p-3 bg-bg-tertiary rounded-lg border border-border-color shadow-inner">
+                  <motion.div
+                    animate={{ boxShadow: [`0 0 10px ${p.color}66`, `0 0 25px ${p.color}99`, `0 0 10px ${p.color}66`] }}
+                    transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
+                    className="p-3 bg-bg-tertiary rounded-lg border border-border-color"
+                  >
                     <Icon className="text-2xl drop-shadow-md" style={{ color: p.color }} />
-                  </div>
+                  </motion.div>
                   <h3 className="font-syne font-bold text-xl text-text-primary">{p.title}</h3>
                 </div>
                 <p className="font-mono text-sm leading-relaxed text-text-secondary">
