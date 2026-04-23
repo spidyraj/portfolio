@@ -77,8 +77,9 @@ export default function Contact() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-purple drop-shadow-[0_0_8px_rgba(0,229,255,0.6)]">together.</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="font-mono text-sm text-text-secondary leading-relaxed max-w-sm">
-              Open to backend engineering roles, AI / ML projects, and interesting collaborations.
-              Drop me a message and I&apos;ll get back to you shortly.
+              Available for <span className="text-accent font-semibold">SDE / Backend Engineering roles</span> from May 2026.
+              I respond to all serious enquiries within 24 hours.
+              Whether it&apos;s a full-time role, internship, or interesting technical collaboration — drop a message.
             </motion.p>
 
             <motion.div variants={stagger} className="space-y-4">
