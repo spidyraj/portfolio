@@ -61,25 +61,22 @@ export default function Hero() {
           >
             {/* Stats row removed */}
 
-            {/* DIVYANSHU RAJ Text & CGPA */}
+            {/* DIVYANSHU RAJ Text */}
             <motion.div variants={childVariants} className="mb-4">
               <h1
-                className="font-playfair font-bold select-none text-text-primary tracking-tighter leading-none"
-                style={{ fontSize: 'clamp(40px, 8vw, 90px)' }}
+                className="font-playfair font-bold select-none animate-text-shimmer text-shimmer-bg bg-clip-text text-transparent bg-gradient-to-r from-accent via-white to-accent-purple tracking-tighter leading-none"
+                style={{ fontSize: 'clamp(40px, 8vw, 95px)', filter: 'drop-shadow(0 0 15px rgba(0,229,255,0.3))' }}
               >
                 DIVYANSHU RAJ
               </h1>
-              <p className="font-mono text-xs text-text-secondary mt-2 tracking-widest pl-1">
-                CGPA: 9.21/10
-              </p>
             </motion.div>
 
             {/* Subtitle / Title */}
             <motion.h2
               variants={childVariants}
-              className="font-syne font-semibold text-lg md:text-2xl text-accent mb-3"
+              className="font-syne font-semibold text-xl md:text-3xl text-accent mb-3"
             >
-              Backend Engineer <span className="text-text-dim">|</span> Distributed Systems <span className="text-text-dim">|</span> AI Systems (RAG)
+              Backend Engineer <span className="text-text-dim px-2">|</span> AI Systems (RAG)
             </motion.h2>
 
             <motion.p
@@ -163,20 +160,25 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator Bottom */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.6 }}
-        className="absolute bottom-8 left-6 lg:left-20 flex items-center gap-2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
         <motion.span
-          animate={{ y: [0, 4, 0] }}
+          animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
-          className="font-mono text-xs text-text-dim tracking-widest"
+          className="font-mono text-xs text-accent tracking-widest"
         >
-          Scroll down ↓
+          SCROLL DOWN
         </motion.span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
+          className="w-px h-8 bg-gradient-to-b from-accent to-transparent"
+        />
       </motion.div>
     </section>
   )

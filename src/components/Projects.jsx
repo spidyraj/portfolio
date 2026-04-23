@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { projects } from '../data/projects'
-import { FiGithub, FiExternalLink } from 'react-icons/fi'
+import { FiGithub, FiExternalLink, FiArrowRight } from 'react-icons/fi'
+import { FaJava, FaAws, FaDocker, FaBrain, FaMicrochip } from 'react-icons/fa'
+import { SiSpringboot, SiPostgresql, SiReact, SiNextdotjs, SiFastapi, SiMysql } from 'react-icons/si'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -10,6 +12,94 @@ const fadeUp = {
 const stagger = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.15 } }
+}
+
+const iconMap = {
+  'Java': { icon: FaJava, color: '#f89820' },
+  'Spring Boot': { icon: SiSpringboot, color: '#6db33f' },
+  'React': { icon: SiReact, color: '#61dafb' },
+  'PostgreSQL': { icon: SiPostgresql, color: '#336791' },
+  'FastAPI': { icon: SiFastapi, color: '#009688' },
+  'Docker': { icon: FaDocker, color: '#2496ed' },
+  'AWS': { icon: FaAws, color: '#ff9900' },
+  'MySQL': { icon: SiMysql, color: '#4479a1' },
+  'Next.js': { icon: SiNextdotjs, color: '#ffffff' },
+  'LLaMA': { icon: FaBrain, color: '#b535f6' },
+  'Whisper': { icon: FaMicrochip, color: '#b535f6' }
+}
+
+function AnimatedArchitecture({ architectureText, techList }) {
+  const steps = architectureText.split('→').map(s => s.trim())
+  
+  return (
+    <div className="mt-3 p-6 bg-bg-tertiary rounded-2xl border border-border-color/50 relative overflow-hidden flex flex-col md:flex-row items-center gap-8">
+      {/* Background Animated Gradients */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent-purple/5 animate-pulse-glow" />
+      
+      {/* Architecture Flow */}
+      <div className="flex-1 flex flex-col gap-3 relative z-10 w-full">
+        {steps.map((step, idx) => (
+          <motion.div 
+            key={idx}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: idx * 0.15 }}
+            className="flex flex-col"
+          >
+            <div className="px-4 py-2 bg-bg-secondary/80 border border-accent/30 rounded-lg text-accent text-xs font-mono shadow-[0_0_10px_rgba(0,229,255,0.1)] glow-cyan-hover">
+              {step}
+            </div>
+            {idx < steps.length - 1 && (
+              <div className="flex justify-center -my-1 opacity-50">
+                <FiArrowRight className="rotate-90 text-text-dim text-lg" />
+              </div>
+            )}
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Orbiting Orbital Tech Stack */}
+      <div className="hidden md:flex relative w-[200px] h-[200px] flex-shrink-0 items-center justify-center">
+        {/* Core Glow */}
+        <div className="absolute inset-0 bg-accent-purple/10 rounded-full blur-[40px] animate-pulse-glow" />
+        
+        {/* Orbit Track */}
+        <div className="absolute w-[180px] h-[180px] rounded-full border border-border-color border-dashed opacity-30 animate-spin" style={{ animationDuration: '20s' }} />
+        
+        {/* Orbital Icons */}
+        <div className="absolute inset-0 animate-spin" style={{ animationDuration: '12s', animationTimingFunction: 'linear' }}>
+          {techList.slice(0, 6).map((tech, idx) => {
+            const mapped = iconMap[tech]
+            if (!mapped) return null
+            const Icon = mapped.icon
+            const angle = (idx / Math.min(6, techList.length)) * 360
+            const radius = 90
+            const x = Math.cos(angle * (Math.PI / 180)) * radius
+            const y = Math.sin(angle * (Math.PI / 180)) * radius
+            
+            return (
+              <div 
+                key={tech}
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-bg-secondary border border-border-color rounded-full flex items-center justify-center shadow-lg"
+                style={{
+                  transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
+                }}
+              >
+                {/* Counter rotate to keep icon upright */}
+                <div 
+                  className="animate-spin" 
+                  style={{ animationDuration: '12s', animationDirection: 'reverse', animationTimingFunction: 'linear' }}
+                >
+                  <Icon className="text-xl drop-shadow-[0_0_8px_currentColor]" style={{ color: mapped.color }} />
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  )
 }
 
 function ProjectCard({ project }) {
@@ -76,9 +166,7 @@ function ProjectCard({ project }) {
 
         <div>
           <strong className="text-text-primary font-syne text-lg">Architecture:</strong>
-          <p className="font-mono text-sm font-semibold text-accent mt-1 p-3 bg-bg-tertiary rounded-lg border border-border-color">
-            {project.architecture}
-          </p>
+          <AnimatedArchitecture architectureText={project.architecture} techList={project.tech} />
         </div>
 
         {project.decisions && project.decisions.length > 0 && (
