@@ -61,23 +61,32 @@ export default function Hero() {
           >
             {/* Stats row removed */}
 
-            {/* DIVYANSHU RAJ Text Illumination */}
-            <motion.h1
-              variants={childVariants}
-              className="font-playfair font-bold mb-4 select-none animate-text-shimmer text-shimmer-bg bg-clip-text text-transparent bg-gradient-to-r from-accent via-white to-accent-purple tracking-tighter leading-none"
-              style={{ fontSize: 'clamp(50px, 10vw, 120px)', filter: 'drop-shadow(0 0 20px rgba(0,229,255,0.4))' }}
-            >
-              DIVYANSHU RAJ
-            </motion.h1>
+            {/* DIVYANSHU RAJ Text & CGPA */}
+            <motion.div variants={childVariants} className="mb-4">
+              <h1
+                className="font-playfair font-bold select-none text-text-primary tracking-tighter leading-none"
+                style={{ fontSize: 'clamp(40px, 8vw, 90px)' }}
+              >
+                DIVYANSHU RAJ
+              </h1>
+              <p className="font-mono text-xs text-text-secondary mt-2 tracking-widest pl-1">
+                CGPA: 9.21/10
+              </p>
+            </motion.div>
 
-            {/* Subtitle */}
+            {/* Subtitle / Title */}
+            <motion.h2
+              variants={childVariants}
+              className="font-syne font-semibold text-lg md:text-2xl text-accent mb-3"
+            >
+              Backend Engineer <span className="text-text-dim">|</span> Distributed Systems <span className="text-text-dim">|</span> AI Systems (RAG)
+            </motion.h2>
+
             <motion.p
               variants={childVariants}
-              className="font-mono text-text-secondary text-sm md:text-lg mb-8 max-w-xl"
+              className="font-mono text-text-secondary text-sm md:text-base mb-8 max-w-xl leading-relaxed"
             >
-              — I&apos;m a{' '}
-              <span className="text-accent drop-shadow-[0_0_8px_rgba(0,229,255,0.8)] font-bold">Software Engineer</span> building scalable
-              systems &amp; <span className="text-accent-purple drop-shadow-[0_0_8px_rgba(181,53,246,0.8)] font-bold">AI-driven applications</span>.
+              I build scalable APIs and intelligent systems.
             </motion.p>
 
             {/* CTAs & Socials */}
@@ -124,18 +133,9 @@ export default function Hero() {
           >
             <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] flex items-center justify-center">
               
-              {/* Spinning Radiant Aura Core */}
-              <div className="absolute inset-0 w-full h-full rounded-full opacity-50 mix-blend-screen animate-pulse-glow bg-[conic-gradient(from_0deg_at_50%_50%,#00e5ff_0%,#b535f6_33%,transparent_66%,#00e5ff_100%)] blur-[50px]" />
-              
-              {/* Orbiting Rotating Icons */}
-              <div className="absolute inset-[-10%] w-[120%] h-[120%] animate-spin-slower opacity-80 pointer-events-none">
-                <FaJava size={50} className="absolute top-[10%] left-[20%] text-[#b07219] drop-shadow-[0_0_15px_#b07219]" style={{ animation: 'spin 12s linear infinite reverse' }} />
-                <SiSpringboot size={45} className="absolute bottom-[20%] right-[10%] text-[#6db33f] drop-shadow-[0_0_15px_#6db33f]" style={{ animation: 'spin 12s linear infinite reverse' }} />
-                <SiReact size={55} className="absolute top-[40%] right-[5%] text-[#61dafb] drop-shadow-[0_0_15px_#61dafb]" style={{ animation: 'spin 12s linear infinite reverse' }} />
-                <FaDocker size={60} className="absolute bottom-[10%] left-[30%] text-[#2496ed] drop-shadow-[0_0_15px_#2496ed]" style={{ animation: 'spin 12s linear infinite reverse' }} />
-                <SiPostgresql size={45} className="absolute top-[5%] right-[40%] text-[#336791] drop-shadow-[0_0_15px_#336791]" style={{ animation: 'spin 12s linear infinite reverse' }} />
-                <FaAws size={40} className="absolute top-[60%] left-[5%] text-[#ff9900] drop-shadow-[0_0_15px_#ff9900]" style={{ animation: 'spin 12s linear infinite reverse' }} />
-              </div>
+              {/* Subtle Ambient Glow */}
+              <div className="absolute inset-0 w-full h-full rounded-full opacity-30 bg-accent blur-[60px]" />
+
 
               {/* Foreground Image - Static & Huge */}
               <div className="relative w-full h-[110%] z-20 flex items-end justify-center pointer-events-none">

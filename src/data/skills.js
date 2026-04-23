@@ -1,8 +1,18 @@
 export const skills = [
-  "Java", "Python", 
-  "Spring Boot", "FastAPI", "React", "CSS", "HTML",
-  "PostgreSQL", "MySQL", "Prisma ORM", 
-  "RAG Systems", "LLM Integration", "Pinecone", "LLaMA", "Whisper",
-  "Git", "Docker", "Postman", "AWS", "Railway",
-  "DSA", "DBMS", "Operating Systems", "OOP", "REST APIs", "Microservices"
+  {
+    category: "Backend",
+    items: ["Java", "Python", "FastAPI", "Spring Boot", "REST APIs", "Microservices"]
+  },
+  {
+    category: "Databases",
+    items: ["PostgreSQL", "MySQL", "Prisma ORM"]
+  },
+  {
+    category: "AI/ML",
+    items: ["RAG Systems", "LLM Integration", "Pinecone", "LLaMA", "Whisper"]
+  },
+  {
+    category: "Tools",
+    items: ["Git", "Docker", "AWS", "Postman", "Railway"]
+  }
 ]

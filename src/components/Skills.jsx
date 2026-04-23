@@ -55,33 +55,45 @@ export default function Skills() {
           </motion.h2>
         </motion.div>
 
-        {/* Skill container */}
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-          className="flex flex-wrap gap-4"
-        >
-          {skills.map((skill) => {
-            const mapped = iconMap[skill]
-            const Icon = mapped ? mapped.icon : BsCodeSlash
-            const color = mapped ? mapped.color : '#00e5ff'
-
-            return (
-              <motion.div
-                key={skill}
+        {/* Skill categories */}
+        <div className="space-y-12">
+          {skills.map((group) => (
+            <motion.div
+              key={group.category}
+              variants={stagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-50px' }}
+            >
+              <motion.p
                 variants={fadeUp}
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="flex items-center gap-3 px-6 py-4 glass-card rounded-2xl shadow-xl glow-cyan-hover
-                           font-syne font-bold text-base md:text-lg text-text-primary hover:text-accent transition-all duration-300 cursor-default group"
+                className="font-mono text-sm text-accent uppercase tracking-widest mb-6 pl-2"
               >
-                <Icon className="text-2xl sm:text-3xl transition-transform group-hover:scale-110 drop-shadow-md" style={{ color }} />
-                <span>{skill}</span>
-              </motion.div>
-            )
-          })}
-        </motion.div>
+                {group.category}
+              </motion.p>
+              <div className="flex flex-wrap gap-4">
+                {group.items.map((skill) => {
+                  const mapped = iconMap[skill]
+                  const Icon = mapped ? mapped.icon : BsCodeSlash
+                  const color = mapped ? mapped.color : '#00e5ff'
+
+                  return (
+                    <motion.div
+                      key={skill}
+                      variants={fadeUp}
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      className="flex items-center gap-3 px-6 py-4 glass-card rounded-2xl shadow-xl glow-cyan-hover
+                                 font-syne font-bold text-base md:text-lg text-text-primary hover:text-accent transition-all duration-300 cursor-default group"
+                    >
+                      <Icon className="text-2xl sm:text-3xl transition-transform group-hover:scale-110 drop-shadow-md" style={{ color }} />
+                      <span>{skill}</span>
+                    </motion.div>
+                  )
+                })}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )

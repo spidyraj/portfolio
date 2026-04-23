@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary: #050505;
-  --bg-secondary: #0a0a0a;
-  --bg-tertiary: #111111;
-  --accent: #00e5ff;
-  --accent-dim: #00b8d4;
-  --accent-purple: #b535f6;
-  --text-primary: #f0f0f0;
-  --text-secondary: #a0a0a0;
-  --text-dim: #555555;
-  --border: #222222;
+  --bg-primary: #0B0F19;
+  --bg-secondary: #0D1424;
+  --bg-tertiary: #131B2F;
+  --accent: #2bbbb2;
+  --accent-dim: #1d827b;
+  --accent-purple: #9b72ff;
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --text-dim: #484f58;
+  --border: #30363d;
 }
 
 html {
@@ -57,12 +57,12 @@ body {
 
 /* Glow utilities */
 .glow-cyan {
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.15), 0 0 40px rgba(0, 229, 255, 0.05);
+  box-shadow: 0 0 20px rgba(43, 187, 178, 0.15), 0 0 40px rgba(43, 187, 178, 0.05);
 }
 
 .glow-cyan-hover:hover {
-  box-shadow: 0 0 25px rgba(0, 229, 255, 0.25), 0 0 50px rgba(0, 229, 255, 0.1);
-  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 25px rgba(43, 187, 178, 0.25), 0 0 50px rgba(43, 187, 178, 0.1);
+  border-color: rgba(43, 187, 178, 0.5);
 }
 
 /* Glassmorphism card */
