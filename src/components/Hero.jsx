@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
+import { FiGithub, FiLinkedin, FiMail, FiChevronDown } from 'react-icons/fi'
 import { FaJava, FaAws, FaDocker } from 'react-icons/fa'
-import { SiSpringboot, SiPostgresql, SiReact } from 'react-icons/si'
+import { SiSpringboot, SiPostgresql, SiReact, SiPython } from 'react-icons/si'
 
 const containerVariants = {
   hidden: {},
@@ -130,8 +130,19 @@ export default function Hero() {
           >
             <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] flex items-center justify-center">
               
-              {/* Subtle Ambient Glow */}
-              <div className="absolute inset-0 w-full h-full rounded-full opacity-30 bg-accent blur-[60px]" />
+              {/* Vibrant Radiant Aura Core */}
+              <div className="absolute inset-0 w-full h-full rounded-full opacity-60 mix-blend-screen animate-pulse-glow bg-[conic-gradient(from_0deg_at_50%_50%,#00e5ff_0%,#b535f6_33%,transparent_66%,#00e5ff_100%)] blur-[50px]" />
+              
+              {/* Varying Sizes Orbiting Rotating Icons */}
+              <div className="absolute inset-[-15%] w-[130%] h-[130%] animate-spin-slower opacity-90 pointer-events-none">
+                <FaJava size={70} className="absolute top-[5%] left-[20%] text-[#f89820] drop-shadow-[0_0_20px_#f89820]" style={{ animation: 'spin 12s linear infinite reverse' }} />
+                <SiSpringboot size={35} className="absolute bottom-[20%] right-[5%] text-[#6db33f] drop-shadow-[0_0_15px_#6db33f]" style={{ animation: 'spin 12s linear infinite reverse' }} />
+                <SiReact size={85} className="absolute top-[35%] right-[0%] text-[#61dafb] drop-shadow-[0_0_25px_#61dafb]" style={{ animation: 'spin 12s linear infinite reverse' }} />
+                <FaDocker size={40} className="absolute bottom-[5%] left-[30%] text-[#2496ed] drop-shadow-[0_0_15px_#2496ed]" style={{ animation: 'spin 12s linear infinite reverse' }} />
+                <SiPostgresql size={60} className="absolute top-[10%] right-[30%] text-[#336791] drop-shadow-[0_0_20px_#336791]" style={{ animation: 'spin 12s linear infinite reverse' }} />
+                <FaAws size={30} className="absolute top-[60%] left-[0%] text-[#ff9900] drop-shadow-[0_0_15px_#ff9900]" style={{ animation: 'spin 12s linear infinite reverse' }} />
+                <SiPython size={50} className="absolute bottom-[40%] left-[-5%] text-[#3776ab] drop-shadow-[0_0_15px_#3776ab]" style={{ animation: 'spin 12s linear infinite reverse' }} />
+              </div>
 
 
               {/* Foreground Image - Static & Huge */}
@@ -160,7 +171,16 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator Bottom */}
+      {/* Scroll indicators Top & Bottom */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.6 }}
+        className="absolute top-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-40 hidden md:flex"
+      >
+        <FiChevronDown className="text-accent text-2xl animate-bounce" />
+      </motion.div>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -170,15 +190,11 @@ export default function Hero() {
         <motion.span
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
-          className="font-mono text-xs text-accent tracking-widest"
+          className="font-mono text-xs text-accent tracking-widest flex flex-col items-center gap-1"
         >
           SCROLL DOWN
+          <FiChevronDown className="text-lg" />
         </motion.span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
-          className="w-px h-8 bg-gradient-to-b from-accent to-transparent"
-        />
       </motion.div>
     </section>
   )

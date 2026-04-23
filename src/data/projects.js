@@ -14,7 +14,7 @@ export const projects = [
     ],
     challenges: "Handling large media inputs without API timeouts. Solved by implementing background workers and asynchronous processing pipelines.",
     results: "Reduced multi-modal query resolution time by 40% natively. Successfully deployed highly concurrent architecture on Railway.",
-    github: "https://github.com/spidyraj",
+    github: "https://github.com/spidyraj/multimodal_chatbot_multiluinguial",
     demo: null,
     image: "/images/project-queryvault.png",
     highlight: "Multi-Modal RAG · Deployed on Railway"
@@ -33,7 +33,7 @@ export const projects = [
     ],
     challenges: "Identifying N+1 query problems in JPA/Hibernate relationships. Refactored queries to use JOIN FETCH for eager loading critical paths.",
     results: "Improved API response times by 25%. Scaled smoothly to handle 10k+ concurrent simulated connections.",
-    github: "https://github.com/spidyraj",
+    github: "https://github.com/spidyraj/task_management_tria",
     demo: null,
     image: "/images/project-taskmanager.png",
     highlight: "25% faster API response"
@@ -51,7 +51,7 @@ export const projects = [
     ],
     challenges: "Configuring container networks for seamless DB-API communication. Solved by defining isolated Docker bridge networks.",
     results: "Robust internal isolation and zero-downtime deployment capabilities.",
-    github: "https://github.com/spidyraj",
+    github: "https://github.com/spidyraj/Fitness-Tracker-Full-Stack-Application",
     demo: null,
     image: "/images/project-fitnesstracker.png",
     highlight: "Dockerized · Spring Security"
