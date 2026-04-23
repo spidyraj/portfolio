@@ -1,4 +1,7 @@
 import { motion } from 'framer-motion'
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
+import { FaJava, FaAws, FaDocker } from 'react-icons/fa'
+import { SiSpringboot, SiPostgresql, SiReact } from 'react-icons/si'
 
 const containerVariants = {
   hidden: {},
@@ -56,84 +59,92 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
-            {/* Stats row */}
-            <motion.div
-              variants={childVariants}
-              className="flex flex-wrap items-center gap-4 mb-4"
-            >
-              <span className="font-mono text-xs text-text-secondary tracking-wide">CGPA: 9.21</span>
-              <span className="text-text-dim text-xs">·</span>
-              <span className="font-mono text-xs text-text-secondary tracking-wide">3 Projects</span>
-              <span className="text-text-dim text-xs">·</span>
-              <span className="font-mono text-xs text-text-secondary tracking-wide">Final Year @ KIIT</span>
-            </motion.div>
+            {/* Stats row removed */}
 
-            {/* Hello and Text Illumination */}
+            {/* DIVYANSHU RAJ Text Illumination */}
             <motion.h1
               variants={childVariants}
-              className="font-playfair font-light mb-4 select-none animate-text-shimmer text-shimmer-bg bg-clip-text text-transparent bg-gradient-to-r from-accent via-white to-accent-purple"
-              style={{ fontSize: 'clamp(72px, 13vw, 160px)', letterSpacing: '-0.02em', filter: 'drop-shadow(0 0 15px rgba(0,229,255,0.3))' }}
+              className="font-playfair font-bold mb-4 select-none animate-text-shimmer text-shimmer-bg bg-clip-text text-transparent bg-gradient-to-r from-accent via-white to-accent-purple tracking-tighter leading-none"
+              style={{ fontSize: 'clamp(50px, 10vw, 120px)', filter: 'drop-shadow(0 0 20px rgba(0,229,255,0.4))' }}
             >
-              Hello
+              DIVYANSHU RAJ
             </motion.h1>
 
             {/* Subtitle */}
             <motion.p
               variants={childVariants}
-              className="font-mono text-text-secondary text-sm md:text-base mb-8 max-w-xl"
+              className="font-mono text-text-secondary text-sm md:text-lg mb-8 max-w-xl"
             >
-              — It&apos;s Divyanshu, a{' '}
-              <span className="text-accent drop-shadow-[0_0_8px_rgba(0,229,255,0.8)]">Backend Engineer</span> building scalable
-              systems &amp; <span className="text-accent-purple drop-shadow-[0_0_8px_rgba(181,53,246,0.8)]">AI-driven applications</span>.
+              — I&apos;m a{' '}
+              <span className="text-accent drop-shadow-[0_0_8px_rgba(0,229,255,0.8)] font-bold">Software Engineer</span> building scalable
+              systems &amp; <span className="text-accent-purple drop-shadow-[0_0_8px_rgba(181,53,246,0.8)] font-bold">AI-driven applications</span>.
             </motion.p>
 
-            {/* CTAs */}
-            <motion.div variants={childVariants} className="flex flex-wrap gap-4">
-              <button
-                onClick={() => {
-                  document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })
-                }}
-                className="font-mono text-sm px-6 py-3 bg-accent text-bg-primary font-medium rounded hover:bg-accent-dim transition-colors duration-200"
-              >
-                View Projects
-              </button>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-mono text-sm px-6 py-3 border border-text-dim text-text-secondary rounded hover:border-accent hover:text-accent transition-all duration-200"
-              >
-                Download Resume ↓
-              </a>
+            {/* CTAs & Socials */}
+            <motion.div variants={childVariants} className="flex flex-col sm:flex-row flex-wrap gap-6 items-start sm:items-center">
+              <div className="flex gap-4">
+                <button
+                  onClick={() => {
+                    document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                  className="font-mono text-sm px-6 py-3 bg-gradient-to-r from-accent to-accent-purple text-bg-primary font-bold rounded hover:shadow-[0_0_20px_rgba(0,229,255,0.5)] transition-all duration-300"
+                >
+                  View Projects
+                </button>
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-sm px-6 py-3 border border-border-color text-text-secondary rounded hover:border-accent hover:text-accent hover:shadow-[0_0_15px_rgba(0,229,255,0.2)] transition-all duration-300"
+                >
+                  Resume ↓
+                </a>
+              </div>
+              
+              <div className="flex gap-4 sm:ml-4 border-l-0 sm:border-l border-border-color pl-0 sm:pl-6">
+                <a href="https://github.com/spidyraj" target="_blank" rel="noopener noreferrer" className="p-3 bg-bg-secondary border border-border-color rounded-full hover:border-[#2dba4e] hover:text-[#2dba4e] hover:shadow-[0_0_15px_rgba(45,186,78,0.3)] transition-all">
+                  <FiGithub size={20} />
+                </a>
+                <a href="https://linkedin.com/in/divyanshu-raj-227761278" target="_blank" rel="noopener noreferrer" className="p-3 bg-bg-secondary border border-border-color rounded-full hover:border-[#0a66c2] hover:text-[#0a66c2] hover:shadow-[0_0_15px_rgba(10,102,194,0.3)] transition-all">
+                  <FiLinkedin size={20} />
+                </a>
+                <a href="mailto:divyanshu15feb.dr@gmail.com" className="p-3 bg-bg-secondary border border-border-color rounded-full hover:border-[#ea4335] hover:text-[#ea4335] hover:shadow-[0_0_15px_rgba(234,67,53,0.3)] transition-all">
+                  <FiMail size={20} />
+                </a>
+              </div>
             </motion.div>
           </motion.div>
 
-          {/* Right: Photo (Unboxed, Floating Aura) */}
+          {/* Right: Photo (Unboxed, Huge, Tech Orbits) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
-            className="flex-shrink-0 flex justify-center lg:justify-end relative w-full lg:w-auto"
+            className="flex-shrink-0 flex justify-center lg:justify-end relative w-full lg:w-auto mt-16 lg:mt-0"
           >
-            <motion.div 
-              animate={{ y: [0, -20, 0] }}
-              transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
-              className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[450px] lg:h-[500px]"
-            >
-              {/* Spinning Aura Core */}
-              <div className="absolute inset-0 top-10 w-full h-[80%] rounded-full opacity-60 mix-blend-screen animate-spin-slow bg-[conic-gradient(from_0deg_at_50%_50%,#00e5ff_0%,#b535f6_33%,transparent_66%,#00e5ff_100%)] blur-[40px]" />
-              <div className="absolute inset-0 top-10 w-full h-[80%] rounded-full opacity-40 mix-blend-screen animate-spin-slower bg-[conic-gradient(from_180deg_at_50%_50%,#b535f6_0%,#00e5ff_33%,transparent_66%,#b535f6_100%)] blur-[60px]" style={{ animationDirection: 'reverse' }} />
+            <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] flex items-center justify-center">
               
-              {/* The Actual Foreground Cutout Image */}
-              <div className="relative w-full h-full z-10 flex items-end justify-center drop-shadow-[0_0_20px_rgba(0,0,0,0.8)]">
+              {/* Spinning Radiant Aura Core */}
+              <div className="absolute inset-0 w-full h-full rounded-full opacity-50 mix-blend-screen animate-pulse-glow bg-[conic-gradient(from_0deg_at_50%_50%,#00e5ff_0%,#b535f6_33%,transparent_66%,#00e5ff_100%)] blur-[50px]" />
+              
+              {/* Orbiting Rotating Icons */}
+              <div className="absolute inset-[-10%] w-[120%] h-[120%] animate-spin-slower opacity-80 pointer-events-none">
+                <FaJava size={50} className="absolute top-[10%] left-[20%] text-[#b07219] drop-shadow-[0_0_15px_#b07219]" style={{ animation: 'spin 12s linear infinite reverse' }} />
+                <SiSpringboot size={45} className="absolute bottom-[20%] right-[10%] text-[#6db33f] drop-shadow-[0_0_15px_#6db33f]" style={{ animation: 'spin 12s linear infinite reverse' }} />
+                <SiReact size={55} className="absolute top-[40%] right-[5%] text-[#61dafb] drop-shadow-[0_0_15px_#61dafb]" style={{ animation: 'spin 12s linear infinite reverse' }} />
+                <FaDocker size={60} className="absolute bottom-[10%] left-[30%] text-[#2496ed] drop-shadow-[0_0_15px_#2496ed]" style={{ animation: 'spin 12s linear infinite reverse' }} />
+                <SiPostgresql size={45} className="absolute top-[5%] right-[40%] text-[#336791] drop-shadow-[0_0_15px_#336791]" style={{ animation: 'spin 12s linear infinite reverse' }} />
+                <FaAws size={40} className="absolute top-[60%] left-[5%] text-[#ff9900] drop-shadow-[0_0_15px_#ff9900]" style={{ animation: 'spin 12s linear infinite reverse' }} />
+              </div>
+
+              {/* Foreground Image - Static & Huge */}
+              <div className="relative w-full h-[110%] z-20 flex items-end justify-center pointer-events-none">
                 <img
                   src="/images/profile.png"
                   alt="Divyanshu Raj"
-                  className="w-full h-auto max-h-full object-contain"
-                  style={{ filter: 'drop-shadow(0px -10px 30px rgba(0, 229, 255, 0.4))' }}
+                  className="w-full h-full object-contain drop-shadow-[0_0_40px_rgba(0,229,255,0.3)] filter brightness-110"
                   onError={(e) => {
                     e.target.style.display = 'none'
-                    e.target.nextSibling.style.display = 'flex'
                   }}
                 />
                 
@@ -147,7 +158,7 @@ export default function Hero() {
                   <div className="text-accent mt-1">/public/images/profile.png</div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>

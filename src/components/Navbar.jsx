@@ -43,7 +43,7 @@ export default function Navbar() {
             href="/"
             className="font-mono text-accent font-bold text-xl tracking-wider hover:opacity-80 transition-opacity"
           >
-            DR
+            DIVYANSHU RAJ
           </a>
 
           {/* Desktop Links */}
