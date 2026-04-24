@@ -3,50 +3,51 @@ export const blogs = [
     id: 1,
     slug: "building-multimodal-rag-system",
     title: "Building a Multi-Modal RAG System from Scratch",
-    excerpt: "How I architected Query Vault 2.0 — a system that handles documents, audio, and video for contextual AI query answering using FastAPI, Pinecone, and LLaMA.",
+    excerpt: "How I architected QueryVault — a system that handles complex documents and audio for contextual AI query answering using FastAPI, Pinecone Serverless, and Llama 3 70B.",
     date: "March 15, 2025",
     readTime: "8 min read",
     tag: "AI / ML",
     content: `# Building a Multi-Modal RAG System from Scratch
 
 ## Introduction
-Retrieval-Augmented Generation (RAG) has transformed how we build AI applications. Instead of relying solely on a model's training data, RAG allows us to inject relevant, up-to-date context directly into the model's prompt at inference time. In Query Vault 2.0, I pushed this further by supporting not just documents, but also audio and video inputs.
+Retrieval-Augmented Generation (RAG) has transformed how we build AI applications. Instead of relying solely on a model's training data, RAG allows us to inject relevant, up-to-date context directly into the model's prompt at inference time. In QueryVault, I pushed this further by supporting heavily encrypted chat logs and ultra-low latency inference for audio and documents.
 
 ## Architecture Overview
 The system is divided into three layers:
 
-**1. Ingestion Layer** — accepts PDFs, audio files, and video files. Documents are chunked and embedded using a sentence transformer model. Audio is transcribed using OpenAI's Whisper, then embedded similarly. Video frames are extracted and captioned.
+**1. Ingestion Layer** — accepts PDFs, Word docs, and audio files. Documents are parsed and run through a Recursive Character Text Splitter to preserve contextual overlap before Pinecone embedding. Audio is rapidly transcribed using OpenAI's Whisper-large-v3 via Groq.
 
-**2. Retrieval Layer** — all embeddings are stored in Pinecone. At query time, the user's question is embedded and the top-k nearest neighbors are fetched using cosine similarity.
+**2. Retrieval Layer** — all embeddings are stored in Pinecone Serverless. At query time, the user's question is embedded and the top-k nearest neighbors are fetched using rapid cosine-similarity.
 
-**3. Inference Layer** — the retrieved chunks are assembled into a context-rich prompt and passed to LLaMA for final answer generation.
+**3. Inference Layer** — the retrieved chunks are assembled into an augmented prompt and passed to Llama 3 70B (via Groq LPU engine) for near-instant generative responses.
 
 ## Tech Stack
-- **FastAPI** for the backend API
-- **Pinecone** as the vector database for storing and querying embeddings
-- **LLaMA** (via Ollama) for local LLM inference
-- **Whisper** for audio-to-text transcription
-- **PostgreSQL** for user and session management
-- **Next.js** for the frontend
+- **FastAPI** for the asynchronous backend microservice
+- **Pinecone Serverless** as the vector database for storing and querying embeddings
+- **Llama 3 70B** (via Groq) for state-of-the-art LLM inference
+- **Whisper-large-v3** for audio-to-text transcription
+- **Supabase PostgreSQL** with AES Encryption (Fernet) for zero-knowledge chat log privacy
+- **Next.js & TailwindCSS** for the responsive user interface
+- **Vercel** for edge network UI deployment
 
 ## Key Challenges & Solutions
 
-**Challenge: Handling multiple modalities uniformly**
-Each modality produces text in a different way — PDFs via text extraction, audio via Whisper transcription, video via frame captioning. The solution was a unified "chunk" format with metadata tags indicating the source modality, allowing the retrieval layer to remain modality-agnostic.
+**Challenge: Handling context loss during extraction**
+Dense documents often lose their contextual meaning when stripped of formatting. The solution was implementing robust parsers along with LangChain's Recursive Character Text Splitter to preserve chunk overlaps and semantic meaning before passing to Pinecone.
 
-**Challenge: Embedding latency on large files**
-Long documents could produce hundreds of chunks. I implemented async batch embedding with a queue system so the user could start querying after partial ingestion while the rest processed in the background.
+**Challenge: Generative latency on large context windows**
+Running enterprise-grade context sweeps usually creates severe model lag. I shifted the heavy LLM inference to Groq's specialized LPU engines. The result was instantaneous streaming of Llama 3 70B token responses, overcoming the classic model timeout issue.
 
-**Challenge: Relevance quality**
-Early tests showed the model sometimes hallucinating when retrieved chunks were only tangentially related. I added a reranking step using a cross-encoder model to filter the top-k chunks before sending them to LLaMA.
+**Challenge: Data Privacy Requirements**
+Users needed confidence placing sensitive data into a RAG pipeline. By implementing an AES Symmetric Encryption layer on the database, I ensured that chat logs cannot be read in plain-text—not even by database administrators.
 
 ## Results
-- Successfully handles PDFs up to 50MB, audio up to 30 minutes, and video up to 10 minutes
-- Average query response time: ~2.3 seconds on Railway's free tier
-- Deployed as a full-stack application with JWT authentication
+- Safely processes large enterprise documents and audio files.
+- Near-instantaneous response logic deployed seamlessly via Vercel and Railway edge networks.
+- Full End-to-End Encryption integrated with Supabase PostgreSQL.
 
 ## Conclusion
-Building Query Vault 2.0 deepened my understanding of vector databases, embedding models, and LLM prompt engineering. The biggest takeaway: the quality of your retrieval pipeline matters far more than the size of your language model.`
+Building QueryVault deepened my expertise in LLM orchestration, vector databases, and, crucially, cloud-level data security. The overarching lesson was that shifting inference to proper logic units (like Groq) fundamentally transforms the generative user experience.`
   },
   {
     id: 2,

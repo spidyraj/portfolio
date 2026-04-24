@@ -4,6 +4,12 @@ Personal portfolio website for Divyanshu Raj, Backend Engineer.
 
 Built with **React + Vite**, **Tailwind CSS**, **Framer Motion**, and **React Router DOM**.
 
+## 🌟 Featured Projects
+- **QueryVault**: Multi-Modal RAG AI Chatbot (Llama 3 70B, Pinecone Serverless, FastAPI, Supabase AES Encryption).
+- **Task Management System**: Enterprise CRUD Backend (Spring Boot).
+- **Fitness Tracker**: Full-Stack Spring Boot microservice.
+
+
 ## 🚀 Getting Started
 
 ```bash
@@ -28,7 +34,7 @@ Before deploying, add the following files to the `public/` directory:
 | File | Description |
 |------|-------------|
 | `public/images/profile.jpg` | Your profile photo (shown in Hero & About) |
-| `public/images/project-queryvault.png` | Query Vault 2.0 screenshot |
+| `public/images/chatbot.png` | QueryVault AI Chatbot screenshot |
 | `public/images/project-taskmanager.png` | Task Manager screenshot |
 | `public/images/project-fitnesstracker.png` | Fitness Tracker screenshot |
 | `public/resume.pdf` | Your resume PDF (linked from Hero) |

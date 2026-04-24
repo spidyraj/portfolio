@@ -1,23 +1,22 @@
 export const projects = [
   {
     id: 1,
-    name: "Query Vault 2.0",
-    subtitle: "Multi-Modal AI System",
-    problem: "Traditional semantic search struggles with varied media sources (audio, video, documents). Users needed a unified system to query context accurately across multi-modal data.",
-    architecture: "User Request → FastAPI → Whisper (Speech-to-Text) → LLaMA (Summarization) → Embedding Generation → Pinecone (Vector Retrieval) → Contextual LLM Response.",
-    tech: ["FastAPI", "PostgreSQL", "Pinecone", "Next.js", "LLaMA", "Whisper"],
+    name: "QueryVault",
+    subtitle: "Multi-Modal RAG AI Chatbot",
+    problem: "Standard chatbots lacked the ability to intuitively process vast multi-modal enterprise data without exposing PII. Users needed a robust, zero-knowledge RAG architecture for processing complex documents and audio.",
+    architecture: "Next.js Frontend → FastAPI Microservice → LangChain → Pinecone Serverless → Llama 3 70B (via Groq) & Whisper-large-v3 → Supabase (encrypted logs).",
+    tech: ["Next.js", "FastAPI", "Pinecone", "Llama 3 70B", "Supabase", "TailwindCSS"],
     decisions: [
-      "Why Pinecone: Chosen for its sub-ms retrieval speeds at high vector dimensions, crucial for real-time RAG.",
-      "Embeddings: Leveraged SentenceTransformers for fast textual embeddings and stored metadata alongside vectors for filtered search.",
-      "FastAPI Concurrency: Used AsyncIO to handle simultaneous model inference limits without blocking the main event loop.",
-      "LLaMA + Whisper Integration: Whisper transcribes audio chunks into text streams, which are then passed to LLaMA for high-level chunk contextualization before embedding."
+      "Inference Acceleration: Shifted the heavy LLM lifting to Groq LPU engines, resulting in near-instantaneous responses with Llama 3 70B.",
+      "Deep Privacy measures: Implemented AES Symmetric Encryption (Fernet) for all user chat logs, ensuring zero-knowledge privacy before hitting the DB.",
+      "Audio Intelligence: Utilized Whisper-large-v3 via Groq for ultra-fast audio-to-text combined with gTTS for responsive audio generation."
     ],
-    challenges: "Handling large media inputs without API timeouts. Solved by implementing background workers and asynchronous processing pipelines.",
-    results: "Reduced multi-modal query resolution time by 40% natively. Successfully deployed highly concurrent architecture on Railway.",
+    challenges: "Preserving meaning during dense document extraction. Solved using custom parsers with a Recursive Character Text Splitter to preserve contextual overlap prior to Pinecone embedding.",
+    results: "Achieved ultra-low latency response cycles locally and deployed securely with encrypted databases and Vercel edge optimizations.",
     github: "https://github.com/spidyraj/multimodal_chatbot_multiluinguial",
-    demo: null,
-    image: "/images/project-queryvault.png",
-    highlight: "Multi-Modal RAG · Deployed on Railway"
+    demo: "https://multimodal-chatbot-multiluinguial.vercel.app/",
+    image: "/images/chatbot.png",
+    highlight: "Multi-Modal RAG · AES Encryption"
   },
   {
     id: 2,
