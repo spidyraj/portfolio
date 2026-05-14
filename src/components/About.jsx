@@ -71,7 +71,7 @@ export default function About() {
                   { label: 'Degree', value: 'B.Tech in Information Technology' },
                   { label: 'University', value: 'KIIT University, Bhubaneswar' },
                   { label: 'Graduation', value: 'Expected May 2026' },
-                  { label: 'CGPA', value: '9.21 / 10' },
+                  { label: 'CGPA', value: '9.29 / 10' },
                   { label: 'Location', value: 'Bhubaneswar, Odisha, India' },
                   { label: 'Availability', value: 'Open to roles from May 2026' },
                 ].map((item) => (

@@ -40,19 +40,20 @@ export const projects = [
   {
     id: 3,
     name: "Fitness Tracker",
-    subtitle: "Backend-Centric Service",
-    problem: "Real-time calorie and workout tracking required a scalable microservices-like isolation to handle burst traffic.",
-    architecture: "React Frontend → Spring Boot REST API → Spring Security Filters → Dockerized MySQL Container.",
-    tech: ["Spring Boot", "MySQL", "React", "Docker", "JWT"],
+    subtitle: "Backend-Centric Full-Stack Application",
+    problem: "Real-time calorie and workout tracking required a scalable, secure backend capable of handling concurrent users with role-based access and persistent data isolation.",
+    architecture: "React Frontend (Vercel) → Spring Boot REST API → Spring Security (JWT) → PostgreSQL Database (Railway) · Dockerized for consistent deployment.",
+    tech: ["Spring Boot", "PostgreSQL", "React", "Docker", "JWT", "Railway"],
     decisions: [
-      "Dockerization: Standardized the development and deployment environment, ensuring no 'works on my machine' errors.",
-      "Spring Security: Implemented fine-grained Role-Based Access Control (RBAC) endpoints."
+      "Dockerization: Standardized the development and deployment environment, ensuring no 'works on my machine' errors across all stages.",
+      "Spring Security: Implemented fine-grained Role-Based Access Control (RBAC) with JWT access and refresh token mechanisms.",
+      "Layered Architecture: Separated concerns via Controller → Service → Repository pattern for maintainability and testability."
     ],
-    challenges: "Configuring container networks for seamless DB-API communication. Solved by defining isolated Docker bridge networks.",
-    results: "Robust internal isolation and zero-downtime deployment capabilities.",
+    challenges: "Configuring container networking for seamless DB-API communication and managing CORS between the Vercel frontend and Railway backend. Solved using Docker bridge networks and Spring CORS configuration.",
+    results: "Full-stack production deployment with stable API performance, workout tracking, calorie management, activity monitoring, and an AI coaching interface.",
     github: "https://github.com/spidyraj/Fitness-Tracker-Full-Stack-Application",
-    demo: null,
+    demo: "https://fitness-tracker-full-stack-applicat.vercel.app",
     image: "/images/project-fitnesstracker.png",
-    highlight: "Dockerized · Spring Security"
+    highlight: "Live Deployed · Spring Security · Docker"
   }
 ]

@@ -35,7 +35,7 @@ export default function Hero() {
           className="font-mono text-xs text-text-dim tracking-widest uppercase"
           style={{ writingMode: 'vertical-lr', transform: 'rotate(180deg)' }}
         >
-          Backend Engineer
+          Software Engineer
         </span>
       </div>
 
@@ -76,7 +76,7 @@ export default function Hero() {
               variants={childVariants}
               className="font-syne font-semibold text-xl md:text-3xl text-accent mb-2"
             >
-              Backend Engineer <span className="text-text-dim px-2">|</span> AI Systems (RAG)
+              Software Engineer <span className="text-text-dim px-2">|</span> AI Systems (RAG)
             </motion.h2>
 
             <motion.p
@@ -84,7 +84,7 @@ export default function Hero() {
               className="font-mono text-xs text-[#2dba4e] mb-6 tracking-wide flex items-center gap-2"
             >
               <span className="inline-block w-2 h-2 rounded-full bg-[#2dba4e] animate-pulse" />
-              Open to SDE / Backend roles — Available for new roles
+              Open to SDE / Software Engineering roles — Available for new roles
             </motion.p>
 
             <motion.p
