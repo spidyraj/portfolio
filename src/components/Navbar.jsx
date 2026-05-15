@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion'
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -13,6 +13,13 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const { scrollYProgress } = useScroll()
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  })
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -28,17 +35,22 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-[2px] bg-accent origin-left z-[60] shadow-[0_0_10px_rgba(0,229,255,0.8)]"
+        style={{ scaleX }}
+      />
+
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-bg-primary/90 backdrop-blur-md border-b border-border-color'
-            : 'bg-transparent'
-        }`}
+        className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50 rounded-full transition-all duration-300 ${scrolled
+            ? 'bg-bg-primary/80 backdrop-blur-md border border-border-color shadow-[0_4px_30px_rgba(0,0,0,0.1)]'
+            : 'bg-transparent border border-transparent'
+          }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="px-6 py-3 flex items-center justify-between">
           {/* Logo */}
           <a
             href="/"

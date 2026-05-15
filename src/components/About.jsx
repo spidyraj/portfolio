@@ -65,30 +65,30 @@ export default function About() {
 
           {/* Right: Stats & Education */}
           <motion.div variants={fadeUp} className="space-y-6">
-             <h3 className="font-syne font-semibold text-2xl text-text-primary">Education & Details</h3>
-             <div className="glass-card rounded-[2rem] p-8 space-y-4 glow-cyan-hover transition-all duration-300">
-               {[
-                  { label: 'Degree', value: 'B.Tech in Information Technology' },
-                  { label: 'University', value: 'KIIT University, Bhubaneswar' },
-                  { label: 'Graduation', value: 'Expected May 2026' },
-                  { label: 'CGPA', value: '9.29 / 10' },
-                  { label: 'Location', value: 'Bhubaneswar, Odisha, India' },
-                  { label: 'Availability', value: 'Open to roles from May 2026' },
-                ].map((item) => (
-                  <div key={item.label} className="flex flex-col sm:flex-row justify-between sm:items-center py-2 border-b border-border-color/30 last:border-0 gap-2">
-                    <span className="font-mono text-xs uppercase tracking-widest text-accent">{item.label}</span>
-                    <span className={`font-mono text-sm font-semibold text-right ${item.label === 'Availability' ? 'text-[#2dba4e]' : 'text-text-primary'}`}>{item.value}</span>
-                  </div>
-                ))}
-             </div>
-             {/* IBM Cert badge */}
-             <div className="flex items-center gap-3 px-4 py-3 glass-card rounded-xl border border-border-color/40">
-               <div className="w-7 h-7 rounded bg-accent/10 flex items-center justify-center text-accent text-xs font-bold flex-shrink-0">IBM</div>
-               <div>
-                 <p className="font-syne text-sm font-semibold text-text-primary">IBM Professional Certificate</p>
-                 <p className="font-mono text-xs text-text-secondary">RAG and Agentic AI — 2025</p>
-               </div>
-             </div>
+            <h3 className="font-syne font-semibold text-2xl text-text-primary">Education & Details</h3>
+            <div className="glass-card rounded-[2rem] p-8 space-y-4 glow-cyan-hover transition-all duration-300">
+              {[
+                { label: 'Degree', value: 'B.Tech in Information Technology' },
+                { label: 'University', value: 'KIIT University, Bhubaneswar' },
+                { label: 'Graduation', value: 'Expected May 2026' },
+                { label: 'CGPA', value: '9.29 / 10' },
+                { label: 'Location', value: 'Bhubaneswar, Odisha, India' },
+                { label: 'Availability', value: 'Open to roles from May 2026' },
+              ].map((item) => (
+                <div key={item.label} className="flex flex-col sm:flex-row justify-between sm:items-center py-2 border-b border-border-color/30 last:border-0 gap-2">
+                  <span className="font-mono text-xs uppercase tracking-widest text-accent">{item.label}</span>
+                  <span className={`font-mono text-sm font-semibold text-right ${item.label === 'Availability' ? 'text-[#2dba4e]' : 'text-text-primary'}`}>{item.value}</span>
+                </div>
+              ))}
+            </div>
+            {/* IBM Cert badge */}
+            <div className="flex items-center gap-3 px-4 py-3 glass-card rounded-xl border border-border-color/40">
+              <div className="w-7 h-7 rounded bg-accent/10 flex items-center justify-center text-accent text-xs font-bold flex-shrink-0">IBM</div>
+              <div>
+                <p className="font-syne text-sm font-semibold text-text-primary">IBM Professional Certificate</p>
+                <p className="font-mono text-xs text-text-secondary">RAG and Agentic AI — 2026</p>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

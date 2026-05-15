@@ -6,8 +6,8 @@ Built with **React + Vite**, **Tailwind CSS**, **Framer Motion**, and **React Ro
 
 ## 🌟 Featured Projects
 - **QueryVault**: Multi-Modal RAG AI Chatbot (Llama 3 70B, Pinecone Serverless, FastAPI, Supabase AES Encryption).
-- **Task Management System**: Enterprise CRUD Backend (Spring Boot).
-- **Fitness Tracker**: Full-Stack Spring Boot microservice.
+- **Task Management System**: Enterprise Full-Stack Application (Next.js + Express.js + PostgreSQL). Live Demo: https://task-management-trial-peach.vercel.app/
+- **Fitness Tracker**: Full-Stack Spring Boot microservice. Live Demo: https://fitness-tracker-full-stack-applicat.vercel.app/
 
 
 ## 🚀 Getting Started

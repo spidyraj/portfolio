@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-bg-primary border-t border-border-color">
       <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="font-mono text-xs text-text-dim text-center sm:text-left">
-          © 2025 Divyanshu Raj &middot; Built with React + Vite
+          © 2026 Divyanshu Raj &middot; Built with React + Vite
         </p>
         <div className="flex items-center gap-5">
           <a

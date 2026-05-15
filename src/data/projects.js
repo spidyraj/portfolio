@@ -21,21 +21,21 @@ export const projects = [
   {
     id: 2,
     name: "Task Management System",
-    subtitle: "Enterprise CRUD Backend",
-    problem: "Inefficient state synchronization between clients and databases causing race conditions.",
-    architecture: "REST API → Spring Boot layered architecture (Controllers -> Services -> Repositories) → PostgreSQL Database.",
-    tech: ["Spring Boot", "React", "PostgreSQL", "JWT"],
+    subtitle: "Enterprise Full-Stack Application",
+    problem: "Needed a scalable, secure task management system with advanced filtering, pagination, and real-time state synchronization.",
+    architecture: "Next.js Frontend → Express.js API Layer → Prisma ORM → PostgreSQL (Supabase) Database.",
+    tech: ["Next.js", "Express.js", "Prisma", "PostgreSQL", "TailwindCSS", "JWT"],
     decisions: [
-      "Layered Architecture: Separated business logic from data access for modularity and testing.",
-      "Secure Auth: Implemented JWT with stateless access/refresh token rotation to prevent token hijacking.",
-      "DB Indexing: Applied composite indexing on frequently queried multi-tenant tables."
+      "Layered Architecture: Clean separation of Next.js SPA frontend and REST API backend.",
+      "Secure Auth: Implemented JWT with 15min access & 7day refresh tokens for seamless sessions.",
+      "Optimistic UI: Enhanced UX with server state management and optimistic updates."
     ],
-    challenges: "Identifying N+1 query problems in JPA/Hibernate relationships. Refactored queries to use JOIN FETCH for eager loading critical paths.",
-    results: "Improved API response times by 25%. Scaled smoothly to handle 10k+ concurrent simulated connections.",
+    challenges: "Handling complex state management with pagination and advanced filtering on the client side while maintaining sync with the backend. Solved using optimized React hooks.",
+    results: "Delivered a highly responsive, mobile-friendly task dashboard with secure authentication and comprehensive analytics.",
     github: "https://github.com/spidyraj/task_management_trial",
-    demo: null,
+    demo: "https://task-management-trial-peach.vercel.app/",
     image: "/images/task_management.png",
-    highlight: "25% faster API response"
+    highlight: "Next.js & Express.js · JWT Auth"
   },
   {
     id: 3,

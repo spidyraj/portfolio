@@ -45,7 +45,7 @@ export default function Hero() {
           className="font-mono text-xs text-text-dim tracking-widest"
           style={{ writingMode: 'vertical-lr' }}
         >
-          2025
+          2026
         </span>
       </div>
 
@@ -114,7 +114,7 @@ export default function Hero() {
                   Resume ↓
                 </a>
               </div>
-              
+
               <div className="flex gap-4 sm:ml-4 border-l-0 sm:border-l border-border-color pl-0 sm:pl-6">
                 <a href="https://github.com/spidyraj" target="_blank" rel="noopener noreferrer" className="p-3 bg-bg-secondary border border-border-color rounded-full hover:border-[#2dba4e] hover:text-[#2dba4e] hover:shadow-[0_0_15px_rgba(45,186,78,0.3)] transition-all">
                   <FiGithub size={20} />
@@ -137,19 +137,20 @@ export default function Hero() {
             className="flex-shrink-0 flex justify-center lg:justify-end relative w-full lg:w-auto mt-16 lg:mt-0"
           >
             <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] flex items-center justify-center">
-              
+
               {/* Vibrant Radiant Aura Core */}
               <div className="absolute inset-0 w-full h-full rounded-full opacity-60 mix-blend-screen animate-pulse-glow bg-[conic-gradient(from_0deg_at_50%_50%,#00e5ff_0%,#b535f6_33%,transparent_66%,#00e5ff_100%)] blur-[50px]" />
-              
-              {/* Varying Sizes Orbiting Rotating Icons */}
-              <div className="absolute inset-[-15%] w-[130%] h-[130%] animate-spin-slower opacity-90 pointer-events-none">
-                <FaJava size={70} className="absolute top-[5%] left-[20%] text-[#f89820] drop-shadow-[0_0_20px_#f89820]" style={{ animation: 'spin 12s linear infinite reverse' }} />
-                <SiSpringboot size={35} className="absolute bottom-[20%] right-[5%] text-[#6db33f] drop-shadow-[0_0_15px_#6db33f]" style={{ animation: 'spin 12s linear infinite reverse' }} />
-                <SiReact size={85} className="absolute top-[35%] right-[0%] text-[#61dafb] drop-shadow-[0_0_25px_#61dafb]" style={{ animation: 'spin 12s linear infinite reverse' }} />
-                <FaDocker size={40} className="absolute bottom-[5%] left-[30%] text-[#2496ed] drop-shadow-[0_0_15px_#2496ed]" style={{ animation: 'spin 12s linear infinite reverse' }} />
-                <SiPostgresql size={60} className="absolute top-[10%] right-[30%] text-[#336791] drop-shadow-[0_0_20px_#336791]" style={{ animation: 'spin 12s linear infinite reverse' }} />
-                <FaAws size={30} className="absolute top-[60%] left-[0%] text-[#ff9900] drop-shadow-[0_0_15px_#ff9900]" style={{ animation: 'spin 12s linear infinite reverse' }} />
-                <SiPython size={50} className="absolute bottom-[40%] left-[-5%] text-[#3776ab] drop-shadow-[0_0_15px_#3776ab]" style={{ animation: 'spin 12s linear infinite reverse' }} />
+
+              {/* Varying Sizes Orbiting Rotating Icons - Now Uniform & Properly Spaced */}
+              <div className="absolute inset-[-20%] w-[140%] h-[140%] animate-spin-slower opacity-90 pointer-events-none">
+                {/* Center is at 50%, 50%. Radius is 50%. Formula: left = 50 + 50*cos(theta), top = 50 + 50*sin(theta) */}
+                <FaJava title="Java" size={45} className="absolute text-[#f89820] drop-shadow-[0_0_20px_#f89820] hover:scale-125 transition-transform cursor-pointer" style={{ top: '50%', left: '100%', transform: 'translate(-50%, -50%)', animation: 'spin 12s linear infinite reverse' }} />
+                <SiSpringboot title="Spring Boot" size={45} className="absolute text-[#6db33f] drop-shadow-[0_0_15px_#6db33f] hover:scale-125 transition-transform cursor-pointer" style={{ top: '89%', left: '81.1%', transform: 'translate(-50%, -50%)', animation: 'spin 12s linear infinite reverse' }} />
+                <SiReact title="React" size={45} className="absolute text-[#61dafb] drop-shadow-[0_0_25px_#61dafb] hover:scale-125 transition-transform cursor-pointer" style={{ top: '98.8%', left: '38.8%', transform: 'translate(-50%, -50%)', animation: 'spin 12s linear infinite reverse' }} />
+                <FaDocker title="Docker" size={45} className="absolute text-[#2496ed] drop-shadow-[0_0_15px_#2496ed] hover:scale-125 transition-transform cursor-pointer" style={{ top: '71.7%', left: '4.9%', transform: 'translate(-50%, -50%)', animation: 'spin 12s linear infinite reverse' }} />
+                <SiPostgresql title="PostgreSQL" size={45} className="absolute text-[#336791] drop-shadow-[0_0_20px_#336791] hover:scale-125 transition-transform cursor-pointer" style={{ top: '28.3%', left: '4.9%', transform: 'translate(-50%, -50%)', animation: 'spin 12s linear infinite reverse' }} />
+                <FaAws title="AWS" size={45} className="absolute text-[#ff9900] drop-shadow-[0_0_15px_#ff9900] hover:scale-125 transition-transform cursor-pointer" style={{ top: '1.2%', left: '38.8%', transform: 'translate(-50%, -50%)', animation: 'spin 12s linear infinite reverse' }} />
+                <SiPython title="Python" size={45} className="absolute text-[#3776ab] drop-shadow-[0_0_15px_#3776ab] hover:scale-125 transition-transform cursor-pointer" style={{ top: '11%', left: '81.1%', transform: 'translate(-50%, -50%)', animation: 'spin 12s linear infinite reverse' }} />
               </div>
 
 
@@ -163,7 +164,7 @@ export default function Hero() {
                     e.target.style.display = 'none'
                   }}
                 />
-                
+
                 {/* Fallback box if image is missing */}
                 <div
                   className="w-64 h-80 bg-gradient-to-b from-bg-tertiary to-bg-secondary border border-border-color rounded-[2rem] flex-col items-center justify-center text-text-dim text-xs text-center p-4 hidden"
