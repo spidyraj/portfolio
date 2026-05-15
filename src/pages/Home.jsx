@@ -4,7 +4,6 @@ import About from '../components/About'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
 import SystemDesign from '../components/SystemDesign'
-import Blog from '../components/Blog'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import ScrollButtons from '../components/ScrollButtons'
@@ -19,7 +18,6 @@ export default function Home() {
         <Projects />
         <Skills />
         <SystemDesign />
-        <Blog />
         <Contact />
       </main>
       <Footer />
