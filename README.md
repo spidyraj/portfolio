@@ -6,8 +6,8 @@ Built with **React + Vite**, **Tailwind CSS**, **Framer Motion**, and **React Ro
 
 ## 🌟 Featured Projects
 - **QueryVault**: Multi-Modal RAG AI Chatbot (Llama 3 70B, Pinecone Serverless, FastAPI, Supabase AES Encryption).
-- **Task Management System**: Enterprise Full-Stack Application (Next.js + Express.js + PostgreSQL). Live Demo: https://task-management-trial-peach.vercel.app/
-- **Fitness Tracker**: Full-Stack Spring Boot microservice. Live Demo: https://fitness-tracker-full-stack-applicat.vercel.app/
+- **Task Management System**: Enterprise Full-Stack Application (Next.js + Express.js + PostgreSQL).
+- **Fitness Tracker**: Full-Stack Spring Boot microservice.
 
 
 ## 🚀 Getting Started
@@ -57,7 +57,7 @@ git push -u origin main
 4. Framework: **Vite** (auto-detected)
 5. Click **Deploy** ✅
 
-**Live URL**: `https://divyanshu-portfolio.vercel.app`
+**Live URL**: `https://portfoliodivyanshu.vercel.app/`
 
 > **Custom domain**: Vercel → Project Settings → Domains
 
