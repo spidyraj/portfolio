@@ -106,7 +106,7 @@ export default function Hero() {
                   View Projects
                 </button>
                 <a
-                  href="/resume.pdf"
+                  href="/Divyanshu_Raj_Resume_updated.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-mono text-sm px-6 py-3 border border-border-color text-text-secondary rounded hover:border-accent hover:text-accent hover:shadow-[0_0_15px_rgba(0,229,255,0.2)] transition-all duration-300"

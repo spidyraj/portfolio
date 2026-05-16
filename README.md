@@ -37,7 +37,7 @@ Before deploying, add the following files to the `public/` directory:
 | `public/images/chatbot.png` | QueryVault AI Chatbot screenshot |
 | `public/images/project-taskmanager.png` | Task Manager screenshot |
 | `public/images/project-fitnesstracker.png` | Fitness Tracker screenshot |
-| `public/resume.pdf` | Your resume PDF (linked from Hero) |
+| `public/Divyanshu_Raj_Resume_updated.pdf` | Your resume PDF (linked from Hero) |
 
 Styled placeholders are shown until you add the images.
 
