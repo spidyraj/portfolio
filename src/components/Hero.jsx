@@ -84,7 +84,7 @@ export default function Hero() {
               className="font-mono text-xs text-[#2dba4e] mb-6 tracking-wide flex items-center gap-2"
             >
               <span className="inline-block w-2 h-2 rounded-full bg-[#2dba4e] animate-pulse" />
-              Open to SDE / Software Engineering roles — Available for new roles
+              Available for SDE / Backend Engineering
             </motion.p>
 
             <motion.p

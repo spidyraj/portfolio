@@ -59,7 +59,7 @@ export default function About() {
                 Hire me ↗
               </a>
               <span className="font-mono text-sm text-text-dim">·</span>
-              <span className="font-mono text-sm text-[#2dba4e]">Open to SDE / Backend roles — 2026</span>
+              <span className="font-mono text-sm text-[#2dba4e]">Available for SDE / Backend Engineering</span>
             </div>
           </motion.div>
 
