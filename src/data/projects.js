@@ -12,7 +12,7 @@ export const projects = [
       "Audio Intelligence: Utilized Whisper-large-v3 via Groq for ultra-fast audio-to-text combined with gTTS for responsive audio generation."
     ],
     challenges: "Preserving meaning during dense document extraction. Solved using custom parsers with a Recursive Character Text Splitter to preserve contextual overlap prior to Pinecone embedding.",
-    results: "Achieved ultra-low latency response cycles locally and deployed securely with encrypted databases and Vercel edge optimizations.",
+    results: "Processed multi-modal queries in <800ms, securely managing concurrent user sessions via Vercel edge functions and Pinecone Serverless vector storage.",
     github: "https://github.com/spidyraj/multimodal_chatbot_multiluinguial",
     demo: "https://multimodal-chatbot-multiluinguial.vercel.app/",
     image: "/images/chatbot.png",
@@ -31,7 +31,7 @@ export const projects = [
       "Optimistic UI: Enhanced UX with server state management and optimistic updates."
     ],
     challenges: "Handling complex state management with pagination and advanced filtering on the client side while maintaining sync with the backend. Solved using optimized React hooks.",
-    results: "Delivered a highly responsive, mobile-friendly task dashboard with secure authentication and comprehensive analytics.",
+    results: "Engineered scalable REST APIs managing 10,000+ mock records with <50ms query response times via Prisma & PostgreSQL indexing.",
     github: "https://github.com/spidyraj/task_management_trial",
     demo: "https://task-management-trial-peach.vercel.app/",
     image: "/images/task_management.png",
@@ -50,7 +50,7 @@ export const projects = [
       "Layered Architecture: Separated concerns via Controller → Service → Repository pattern for maintainability and testability."
     ],
     challenges: "Configuring container networking for seamless DB-API communication and managing CORS between the Vercel frontend and Railway backend. Solved using Docker bridge networks and Spring CORS configuration.",
-    results: "Full-stack production deployment with stable API performance, workout tracking, calorie management, activity monitoring, and an AI coaching interface.",
+    results: "Architected a high-throughput Spring Boot microservice capable of securely handling concurrent user data isolation via robust JWT Role-Based Access Control.",
     github: "https://github.com/spidyraj/Fitness-Tracker-Full-Stack-Application",
     demo: "https://fitness-tracker-full-stack-applicat.vercel.app",
     image: "/images/project-fitnesstracker.png",

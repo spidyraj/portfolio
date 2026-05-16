@@ -64,7 +64,7 @@ export default function Navbar() {
               <button
                 key={link.label}
                 onClick={() => handleNav(link.href)}
-                className="font-mono text-text-secondary text-sm px-3 py-1.5 rounded hover:text-text-primary hover:bg-white/5 active:scale-95 active:bg-accent/10 transition-all duration-200 tracking-wide"
+                className="font-mono text-text-secondary text-sm px-4 py-1.5 rounded border border-border-color/50 hover:border-accent hover:text-accent hover:bg-accent/5 active:scale-95 active:bg-accent/10 transition-all duration-200 tracking-wide"
               >
                 {link.label}
               </button>

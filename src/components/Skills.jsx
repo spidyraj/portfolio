@@ -3,7 +3,7 @@ import { skills } from '../data/skills'
 import {
   SiPython, SiSpringboot, SiFastapi, SiReact,
   SiPostgresql, SiMysql, SiDocker, SiGit,
-  SiPostman, SiPrisma, SiRailway
+  SiPostman, SiPrisma, SiRailway, SiExpress, SiVercel
 } from 'react-icons/si'
 import { FaBrain, FaMicrochip, FaJava, FaAws } from 'react-icons/fa'
 import { BsCodeSlash } from 'react-icons/bs'
@@ -26,6 +26,8 @@ const iconMap = {
   'Railway': { icon: SiRailway, color: '#0b0d0e' },
   'RAG Systems': { icon: FaBrain, color: '#b535f6' },
   'LLM Integration': { icon: FaMicrochip, color: '#b535f6' },
+  'Express.js': { icon: SiExpress, color: '#e2e8f0' },
+  'Vercel': { icon: SiVercel, color: '#ffffff' },
 }
 
 const fadeUp = {
