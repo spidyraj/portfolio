@@ -76,7 +76,7 @@ export default function Hero() {
               variants={childVariants}
               className="font-syne font-semibold text-xl md:text-3xl text-accent mb-2"
             >
-              Software Engineer <span className="text-text-dim px-2">|</span> AI Systems (RAG)
+              Software Engineer <span className="text-text-dim px-2">|</span> AI System
             </motion.h2>
 
             <motion.p

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { projects } from '../data/projects'
 import { FiGithub, FiExternalLink, FiArrowRight } from 'react-icons/fi'
 import { FaJava, FaAws, FaDocker, FaBrain, FaMicrochip, FaSeedling } from 'react-icons/fa'
-import { SiSpringboot, SiPostgresql, SiReact, SiNextdotjs, SiFastapi, SiMysql, SiPinecone, SiOpenai, SiExpress, SiPrisma, SiTailwindcss, SiSupabase } from 'react-icons/si'
+import { SiSpringboot, SiPostgresql, SiReact, SiNextdotjs, SiFastapi, SiMysql, SiPinecone, SiOpenai, SiExpress, SiPrisma, SiTailwindcss, SiSupabase, SiVercel } from 'react-icons/si'
 import { BsCodeSlash } from 'react-icons/bs'
 
 const fadeUp = {
@@ -33,6 +33,7 @@ const iconMap = {
   'Prisma': { icon: SiPrisma, color: '#2d3748' },
   'TailwindCSS': { icon: SiTailwindcss, color: '#38bdf8' },
   'Supabase': { icon: SiSupabase, color: '#3ecf8e' },
+  'Vercel': { icon: SiVercel, color: '#ffffff' },
 }
 
 function AnimatedArchitecture({ architectureText, techList }) {

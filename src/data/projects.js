@@ -24,7 +24,7 @@ export const projects = [
     subtitle: "Enterprise Full-Stack Application",
     problem: "Needed a scalable, secure task management system with advanced filtering, pagination, and real-time state synchronization.",
     architecture: "Next.js Frontend → Express.js API Layer → Prisma ORM → PostgreSQL (Supabase) Database.",
-    tech: ["Next.js", "Express.js", "Prisma", "PostgreSQL", "TailwindCSS", "JWT"],
+    tech: ["Next.js", "Express.js", "Prisma", "PostgreSQL", "TailwindCSS", "JWT", "Vercel"],
     decisions: [
       "Layered Architecture: Clean separation of Next.js SPA frontend and REST API backend.",
       "Secure Auth: Implemented JWT with 15min access & 7day refresh tokens for seamless sessions.",
@@ -40,10 +40,10 @@ export const projects = [
   {
     id: 3,
     name: "Fitness Tracker",
-    subtitle: "Backend-Centric Full-Stack Application",
+    subtitle: "AI powered full stack application",
     problem: "Real-time calorie and workout tracking required a scalable, secure backend capable of handling concurrent users with role-based access and persistent data isolation.",
     architecture: "React Frontend (Vercel) → Spring Boot REST API → Spring Security (JWT) → PostgreSQL Database (Railway) · Dockerized for consistent deployment.",
-    tech: ["Spring Boot", "PostgreSQL", "React", "Docker", "JWT", "Railway"],
+    tech: ["Spring Boot", "PostgreSQL", "React", "Docker", "JWT", "Railway", "Vercel"],
     decisions: [
       "Dockerization: Standardized the development and deployment environment, ensuring no 'works on my machine' errors across all stages.",
       "Spring Security: Implemented fine-grained Role-Based Access Control (RBAC) with JWT access and refresh token mechanisms.",

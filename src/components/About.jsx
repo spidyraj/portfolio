@@ -59,7 +59,7 @@ export default function About() {
                 Hire me ↗
               </a>
               <span className="font-mono text-sm text-text-dim">·</span>
-              <span className="font-mono text-sm text-[#2dba4e]">Open to SDE / Backend roles — May 2026</span>
+              <span className="font-mono text-sm text-[#2dba4e]">Open to SDE / Backend roles — 2026</span>
             </div>
           </motion.div>
 
@@ -70,10 +70,10 @@ export default function About() {
               {[
                 { label: 'Degree', value: 'B.Tech in Information Technology' },
                 { label: 'University', value: 'KIIT University, Bhubaneswar' },
-                { label: 'Graduation', value: 'Expected May 2026' },
+                { label: 'Graduation', value: 'Expected 2026' },
                 { label: 'CGPA', value: '9.29 / 10' },
                 { label: 'Location', value: 'Bhubaneswar, Odisha, India' },
-                { label: 'Availability', value: 'Open to roles from May 2026' },
+                { label: 'Availability', value: 'Open to roles from 2026' },
               ].map((item) => (
                 <div key={item.label} className="flex flex-col sm:flex-row justify-between sm:items-center py-2 border-b border-border-color/30 last:border-0 gap-2">
                   <span className="font-mono text-xs uppercase tracking-widest text-accent">{item.label}</span>
